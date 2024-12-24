@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@300;400;500;600;600&display=swap');
+
+@import url("./fonts/style.css");
+
+:root {
+    --gradient: linear-gradient(to right,#7e77ee, #a894e6);
+    --color--gray: #dfdfdf;
+    --transition:all 0.3s ease-in-out ;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", serif;
+    background-color: #e0e5eb;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+/* mobile */
+
+
+
+.mobile {
+    width: 350px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: -5px 5px 10px rgb(0,0,0,0.4);
+    display: grid;
+    grid-template-rows:48px 1fr 62px;
+}
+
+.mobile-top,
+.mobile-button{
+    align-self: center;
+    justify-self: center;
+}
+
+.mobile-content {
+    background: #fff;
+}
+
+
+/* selectbox */
+
+.selectbox {
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.selectbox-selected {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.selectbox.open .ic_arrow {
+    transform: rotate(-180deg);
+}
+
+.ic_arrow {
+    display: inline-block;
+    font-size: 0.7em;
+    margin-left: 10 px;
+    transition: var(--transition);
+    transform: rotate(0deg);
+}
+
+.selectbox.open .selectbox__list{
+    top: 120%;
+    max-height: 200px;
+}
+
+.selectbox__list {
+    position: absolute;
+    top: 0;
+    left: -8px;
+    right: -8px;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    padding: 4px 8;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: var(--transition);
+    
+}
+
+.selectbox__item {
+    cursor: pointer;
+}
+
+.selectbox__ite.selected,
+.selectbox__item:hover {
+    color: #7e77ee;
+    font-weight: 600;
+}
+
+.selectbox__item:not(:last-child){
+    margin-bottom: 5px;
+}
+
+/* rooms */
+
+
+.rooms{
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 14px;
+    cursor: pointer;
+}
+
+.room{
+    display: grid;
+    grid-template-rows: 130px 30px;
+    align-content: center;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: var(--color--gray);
+}
+
+.room.selected {
+    background: var(--gradient);
+    color: #fff;
+}
+
+.room.selected i {
+    opacity: 1;
+}
+
+.room i {
+    align-self: center;
+    font-size: 5em;
+    opacity: 0.7;
+}
+
+
+
+
